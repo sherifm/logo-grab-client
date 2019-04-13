@@ -31,7 +31,7 @@ const errorWriter = csvWriter()
 detectionWriter.pipe(fs.createWriteStream("detections.csv"))
 errorWriter.pipe(fs.createWriteStream("error_log.csv"))
 
-fs.createReadStream("frame_urls_100_sample.csv")
+fs.createReadStream("frame_urls.csv")
   .pipe(csv())
   .on('data', function(row){
     throttle().then(function(){
